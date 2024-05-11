@@ -34,9 +34,9 @@ else
     GIT_BRANCH=$(echo $GIT_BRANCH_TEMP)
 fi
 
-GIT_TAGS=$(git describe --tags)
-
-export BASH_KBUILD_COMMAND="make -C $(pwd) O=$(pwd)/out CONFIG_LOCALVERSION='-Aqua-$(echo $GIT_TAGS)-$(echo $GIT_BRANCH)'"
+GIT_TAGS=$(git describe --tag --abbrev=0)
+export LOCALVERSION="-Aqua-$(echo $GIT_TAGS)-$(echo $GIT_BRANCH)"
+export BASH_KBUILD_COMMAND="make -C $(pwd) O=$(pwd)/out "
 
 # Function
 case $1 in
