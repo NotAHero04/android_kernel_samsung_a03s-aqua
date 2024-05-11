@@ -60,10 +60,11 @@ case $1 in
         ;;
     "menuconfig")
         $BASH_KBUILD_COMMAND menuconfig
-	    ;;
+        ;;
     "kernelsu")
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
-        git apply ../ksu.patch
+        wget https://gist.githubusercontent.com/ArcticAquila/31d88bdddd4f575fda5a8efa408360ed/raw/277eee5af8e3fc318d8ebec8a8146fd2e04df24a/ksu.patch
+        git apply ksu.patch
         ;;
     "prepare")
         $BASH_KBUILD_COMMAND aqua_defconfig
