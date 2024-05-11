@@ -135,3 +135,6 @@ all.config
 
 # Toolchain for compiling
 toolchain
+
+# Working folder
+out
