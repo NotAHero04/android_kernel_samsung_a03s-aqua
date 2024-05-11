@@ -44,7 +44,7 @@ case $1 in
         git clone --depth=1 https://github.com/ArcticAquila/AnyKernel3
         cp -rv out/arch/arm64/boot/Image.gz AnyKernel3
         cd AnyKernel3
-        zip -r9 ../../UPDATE-AnyKernel3.zip * -x .git README.md *placeholder
+        zip -r9 UPDATE-AnyKernel3.zip * -x .git README.md *placeholder
         cd ..
         ;;
     "build")
