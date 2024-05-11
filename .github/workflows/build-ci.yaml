@@ -34,16 +34,18 @@ jobs:
         - name: Build Kernel
           run: bash build.sh build
 
-        - uses: actions/upload-artifact@v4
+        - name: Upload Compressed Gzip Kernel Image
+          uses: actions/upload-artifact@v4
           with:
             name: Vanilla Compressed Gzip Kernel Image
-            path: android_kernel_samsung_a03s-aqua/out/arch/arm64/boot/Image.gz
+            path: out/arch/arm64/boot/Image.gz
             compression-level: 9
 
-        - uses: actions/upload-artifact@v4
+        - name: Upload Flashable Zip
+          uses: actions/upload-artifact@v4
           with:
             name: Vanilla Flashable Zip 
-            path: UPDATE-AnyKernel3.zip
+            path: AnyKernel3/UPDATE-AnyKernel3.zip
             compression-level: 9
 
     kernelsu-kernel:
@@ -70,19 +72,21 @@ jobs:
         - name: Build Kernel
           run: bash build.sh build
 
-        - uses: actions/upload-artifact@v4
+        - name: Upload Compressed Gzip Kernel Image
+          uses: actions/upload-artifact@v4
           with:
             name: KernelSU Compressed Gzip Kernel Image
-            path: android_kernel_samsung_a03s-aqua/out/arch/arm64/boot/Image.gz
+            path: out/arch/arm64/boot/Image.gz
             compression-level: 9
 
-        - uses: actions/upload-artifact@v4
+        - name: Upload Flashable Zip
+          uses: actions/upload-artifact@v4
           with:
             name: KernelSU Flashable Zip 
-            path: UPDATE-AnyKernel3.zip
+            path: AnyKernel3/UPDATE-AnyKernel3.zip
             compression-level: 9
 
-    preparing-packages:
+    publish-packages:
         needs: [vanilla-kernel, kernelsu-kernel]
         runs-on: ubuntu-latest
         steps:
