@@ -34,6 +34,9 @@ jobs:
         - name: Build Kernel
           run: bash build.sh build
 
+        - name: Repack with AnyKernel3
+          run: bash build.sh anykernel3
+
         - name: Upload Compressed Gzip Kernel Image
           uses: actions/upload-artifact@v4
           with:
@@ -71,6 +74,9 @@ jobs:
 
         - name: Build Kernel
           run: bash build.sh build
+
+        - name: Repack with AnyKernel3
+          run: bash build.sh anykernel3
 
         - name: Upload Compressed Gzip Kernel Image
           uses: actions/upload-artifact@v4
