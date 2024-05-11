@@ -36,7 +36,7 @@ fi
 
 GIT_TAGS=$(git describe --tags)
 
-export BASH_KBUILD_COMMAND="make -C $(pwd) O=$(pwd)/out CONFIG_LOCALVERSION=\"-`echo $GIT_TAGS`-`echo $GIT_BRANCH`\""
+export BASH_KBUILD_COMMAND="make -C $(pwd) O=$(pwd)/out CONFIG_LOCALVERSION='-Aqua-$(echo $GIT_TAGS)-$(echo $GIT_BRANCH)'"
 
 # Function
 case $1 in
