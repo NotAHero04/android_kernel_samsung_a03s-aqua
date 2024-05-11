@@ -100,9 +100,9 @@ jobs:
 
         - name: Preparing file before uploading
           run: |
-              unzip "KernelSU Flashable Zip.zip"
+              unzip "KernelSU Flashable Zip"
               mv UPDATE-AnyKernel3.zip A03s-AnyKernel3-KernelSU.zip
-              unzip "VANILLA Flashable Zip.zip"
+              unzip "Vanilla Flashable Zip"
               mv UPDATE-AnyKernel3.zip A03s-AnyKernel3-Vannila.zip
 
         #- name: Upload file to sourceforge
