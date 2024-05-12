@@ -100,7 +100,7 @@ jobs:
 
         - name: Preparing file before uploading
           run: |
-              ls -lh
+              ls -lR
               unzip "KernelSU Flashable Zip"
               mv UPDATE-AnyKernel3.zip A03s-AnyKernel3-KernelSU.zip
               unzip "Vanilla Flashable Zip"
