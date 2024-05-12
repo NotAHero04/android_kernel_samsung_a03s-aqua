@@ -100,11 +100,8 @@ jobs:
 
         - name: Preparing file before uploading
           run: |
-              ls -lR
-              unzip "KernelSU Flashable Zip"
-              mv UPDATE-AnyKernel3.zip A03s-AnyKernel3-KernelSU.zip
-              unzip "Vanilla Flashable Zip"
-              mv UPDATE-AnyKernel3.zip A03s-AnyKernel3-Vannila.zip
+              mv "KernelSU Flashable Zip/UPDATE-AnyKernel3.zip" A03s-AnyKernel3-KernelSU.zip
+              mv "Vanilla Flashable Zip/UPDATE-AnyKernel3.zip" A03s-AnyKernel3-Vannila.zip
 
         #- name: Upload file to sourceforge
           #uses: appleboy/scp-action@v0.1.7
